@@ -27,6 +27,33 @@
         tools:text="username" />
 
     <TextView
+        android:id="@+id/tvScreenName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toEndOf="@+id/tvUsername"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="\@some_screen_name" />
+
+    <TextView
+        android:id="@+id/tvMiddleDot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/middle_dot"
+        app:layout_constraintStart_toEndOf="@+id/tvScreenName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRelativeTimestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toEndOf="@+id/tvMiddleDot"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="56m" />
+
+    <TextView
         android:id="@+id/tvTweetBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

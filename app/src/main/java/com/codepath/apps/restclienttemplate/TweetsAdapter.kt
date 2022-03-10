@@ -25,11 +25,14 @@ class TweetsAdapter(val tweets: List<Tweet>) : RecyclerView.Adapter<TweetsAdapte
     override fun onBindViewHolder(holder: TweetsAdapter.ViewHolder, position: Int) {
         // Get the data model based on the position
         val tweet: Tweet = tweets.get(position)
+        val screenNameWithAtSign = "@" + tweet.user?.screenName
 
         // Set item views based on views and data model
-        holder.tvUsername.text = tweet.user?.name
-        holder.tvTweetBody.text = tweet.body
         Glide.with(holder.itemView).load(tweet.user?.publicImageUrl).into(holder.ivProfileImage)
+        holder.tvUsername.text = tweet.user?.name
+        holder.tvScreenName.text = screenNameWithAtSign
+        holder.tvRelativeTimestamp.text = tweet.relativeTimestamp
+        holder.tvTweetBody.text = tweet.body
     }
 
     override fun getItemCount(): Int {
@@ -39,6 +42,8 @@ class TweetsAdapter(val tweets: List<Tweet>) : RecyclerView.Adapter<TweetsAdapte
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val ivProfileImage = itemView.findViewById<ImageView>(R.id.ivProfileImage)
         val tvUsername = itemView.findViewById<TextView>(R.id.tvUsername)
+        val tvScreenName = itemView.findViewById<TextView>(R.id.tvScreenName)
+        val tvRelativeTimestamp = itemView.findViewById<TextView>(R.id.tvRelativeTimestamp)
         val tvTweetBody = itemView.findViewById<TextView>(R.id.tvTweetBody)
     }
 }
