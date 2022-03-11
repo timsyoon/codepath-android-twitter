@@ -30,27 +30,20 @@
         android:id="@+id/tvScreenName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="14dp"
         app:layout_constraintStart_toEndOf="@+id/tvUsername"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="\@some_screen_name" />
 
     <TextView
-        android:id="@+id/tvMiddleDot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/middle_dot"
-        app:layout_constraintStart_toEndOf="@+id/tvScreenName"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/tvRelativeTimestamp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:layout_constraintStart_toEndOf="@+id/tvMiddleDot"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="14dp"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:text="56m" />
 
     <TextView
