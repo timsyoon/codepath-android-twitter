@@ -85,14 +85,11 @@ class ComposeActivity : AppCompatActivity() {
         etCompose.addTextChangedListener(object : TextWatcher {
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                Log.i(TAG, "In beforeTextChanged().")
-                Log.i(TAG, "   count: $count")
             }
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                Log.i(TAG, "In onTextChanged().")
-                Log.i(TAG, "   count: $count")
-                charactersRemaining = CHARACTER_LIMIT - count
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                val stringLength = s.length
+                charactersRemaining = CHARACTER_LIMIT - stringLength
                 tvCharacterCount.text = charactersRemaining.toString()
                 if (charactersRemaining < 0) {
                     tvCharacterCount.setTextColor(Color.RED)
@@ -102,7 +99,6 @@ class ComposeActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                Log.i(TAG, "In afterTextChanged().")
             }
         })
     }
